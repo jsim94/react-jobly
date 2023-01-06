@@ -1,0 +1,16 @@
+{
+  "name": "react-jobly",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run start-fe\" \"npm run start-be\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-fe": "npm --prefix ./react-jobly start ./react-jobly",
+    "start-be": "npm --prefix ./backend start ./backend"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
