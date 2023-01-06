@@ -12,13 +12,15 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/jobs" element={<JobList />} />
-        <Route exact path="/companies" element={<CompanyList />} />
-        <Route exact path="/profile" element={<Profile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main className="container">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/jobs" element={<JobList />} />
+          <Route exact path="/companies" element={<CompanyList />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </>
   );
 }
