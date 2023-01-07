@@ -11,7 +11,7 @@ const BASE_URL =
  *
  */
 
-class JoblyApi {
+export default class JoblyApi {
   // the token for interactive with the API will be stored here.
   static token;
 
@@ -42,7 +42,28 @@ class JoblyApi {
     return res.company;
   }
 
-  // obviously, you'll add a lot here ...
+  /** Get list of companies */
+
+  static async getCompanies(query) {
+    let res = await this.request(
+      `companies${query ? `?name=${query}` : ""}`
+    );
+    return res.companies;
+  }
+
+  /** Get details on a job by id. */
+
+  static async getJob(id) {
+    let res = await this.request(`jobs/${id}`);
+    return res.job;
+  }
+
+  /** Get list of jobs. */
+
+  static async getJobs() {
+    let res = await this.request(`jobs`);
+    return res.jobs;
+  }
 }
 
 // for now, put token ("testuser" / "password" on class)
