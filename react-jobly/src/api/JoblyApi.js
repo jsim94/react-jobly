@@ -35,6 +35,29 @@ export default class JoblyApi {
 
   // Individual API routes
 
+  static authenticateUser(data) {
+    const authCall = this.request("auth/token", data, "post");
+    authCall.catch((error) => {});
+
+    return authCall;
+  }
+
+  /** Register a new user */
+
+  static registerUser(data) {
+    const registerCall = this.request(`auth/register`, data, "post");
+    registerCall.catch((error) => {});
+
+    return registerCall;
+  }
+
+  /** Get details on a user by username. */
+
+  static async getUser(username) {
+    let res = await this.request(`users/${username}`);
+    return res.user;
+  }
+
   /** Get details on a company by handle. */
 
   static async getCompany(handle) {

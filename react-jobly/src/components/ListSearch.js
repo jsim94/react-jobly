@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form } from "react-bootstrap";
-import useSearchTimeout from "../hooks/useSearchTimeout";
+import { useSearchTimeout } from "../hooks";
 
 export default function ListSearch({ callback }) {
   const [search, setSearch] = useState("");

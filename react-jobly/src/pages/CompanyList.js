@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-import joblyApi from "../api/JoblyApi";
-import CompanyCard from "../components/CompanyCard";
-import ListSearch from "../components/ListSearch";
+import { JoblyApi } from "../api/";
+import { CompanyCard, ListSearch } from "../components";
 
 export default function CompanyList() {
   const [companies, setCompanies] = useState([]);
 
   const populateCompanies = async (q) => {
-    setCompanies(await joblyApi.getCompanies(q));
+    setCompanies(await JoblyApi.getCompanies(q));
   };
 
   useEffect(() => {

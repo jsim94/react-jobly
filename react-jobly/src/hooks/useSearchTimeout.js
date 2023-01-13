@@ -11,7 +11,7 @@ export default function useSearchTimeout(trigger, callback, delay) {
   const isInitialMount = useRef(true);
 
   useEffect(() => {
-    // runs callback on first render
+    // does not run on first render
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;

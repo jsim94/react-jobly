@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import joblyApi from "../api/JoblyApi";
-import JobCard from "../components/JobCard";
-import ListSearch from "../components/ListSearch";
+import { JoblyApi } from "../api";
+import { JobCard } from "../components";
 
 export default function JobList() {
   const [jobs, setJobs] = useState([]);
 
   const populateJobs = async (q) => {
-    setJobs(await joblyApi.getJobs(q));
+    setJobs(await JoblyApi.getJobs(q));
   };
 
   useEffect(() => {
@@ -20,9 +19,6 @@ export default function JobList() {
       <Row className="align-center">
         <Col>
           <h1>Jobs</h1>
-        </Col>
-        <Col>
-          <ListSearch callback={populateJobs} />
         </Col>
       </Row>
       <div>

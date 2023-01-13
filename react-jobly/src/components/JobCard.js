@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import addCommas from "../helpers/addCommas";
+import { addCommas } from "../helpers";
 
 export default function JobCard({ job }) {
   return (
