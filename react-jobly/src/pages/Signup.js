@@ -9,32 +9,32 @@ export default function Signup({ changeToken }) {
 
   const fields = {
     username: {
-      initValue: "jsim",
+      initValue: "",
       displayName: "Username",
       type: "text",
     },
     firstName: {
-      initValue: "jam",
+      initValue: "",
       displayName: "First Name",
       type: "text",
     },
     lastName: {
-      initValue: "sim",
+      initValue: "",
       displayName: "Last Name",
       type: "text",
     },
     email: {
-      initValue: "jsim@gmail.com",
+      initValue: "",
       displayName: "Email",
       type: "email",
     },
     password: {
-      initValue: "test123",
+      initValue: "",
       displayName: "Password",
       type: "password",
     },
     confirmPassword: {
-      initValue: "test123",
+      initValue: "",
       displayName: "Confirm Password",
       type: "password",
     },

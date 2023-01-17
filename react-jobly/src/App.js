@@ -80,6 +80,15 @@ export default function App() {
           />
           <Route
             exact
+            path="/profile"
+            element={
+              <Protected check={userContext.isLoggedIn}>
+                <Profile />
+              </Protected>
+            }
+          />
+          <Route
+            exact
             path="/companies"
             element={
               <Protected

@@ -35,6 +35,8 @@ export default class JoblyApi {
 
   // Individual API routes
 
+  /** Authenticate a user */
+
   static authenticateUser(data) {
     const authCall = this.request("auth/token", data, "post");
     authCall.catch((error) => {});
@@ -46,6 +48,19 @@ export default class JoblyApi {
 
   static registerUser(data) {
     const registerCall = this.request(`auth/register`, data, "post");
+    registerCall.catch((error) => {});
+
+    return registerCall;
+  }
+
+  /** Update a user */
+
+  static updateUser(username, data) {
+    const registerCall = this.request(
+      `users/${username}`,
+      data,
+      "patch"
+    );
     registerCall.catch((error) => {});
 
     return registerCall;
@@ -86,6 +101,16 @@ export default class JoblyApi {
   static async getJobs() {
     let res = await this.request(`jobs`);
     return res.jobs;
+  }
+
+  static async applyForJob(username, jobId) {
+    let res = await this.request(
+      `users/${username}/jobs/${jobId}`,
+      {},
+      "post"
+    );
+    console.log(res);
+    return res;
   }
 }
 
